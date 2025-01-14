@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import googlePlayImg from "./assets/Img/GooglePlay.png"
+import microsoftPlayImg from "./assets/Img/Microsoft-play.png"
 import './App.css'
 
 function App() {
@@ -210,9 +212,9 @@ function App() {
             <div className='p-6'>
               <p className='text-sm'>Get the app.</p>
               <div className="flex">
-                <img src="\src\assets\Img\GooglePlay.png" alt="GooglePlay"
+                <img src={googlePlayImg} alt="GooglePlay"
                   className="h-[59px] w-[115px]" />
-                <img src="\src\assets\Img\Microsoft-play.png" alt="MicrosoftPlay" className="mt-[-1px] h-[60px] w-[149px]" />
+                <img src={microsoftPlayImg} alt="MicrosoftPlay" className="mt-[-1px] h-[60px] w-[149px]" />
               </div>
             </div>
 
