@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import googlePlayImg from "./assets/Img/GooglePlay.png"
 import microsoftPlayImg from "./assets/Img/Microsoft-play.png"
+import iphoneBgImg from "./assets/Img/RootImg.png"
+import instagramText from "./assets/Img/InstagramText.png"
+
+import screenImg1 from "./assets/Img/PInsta-1.png"
+import screenImg2 from "./assets/Img/PInsta-2.png"
+import screenImg3 from "./assets/Img/PInsta-3.png"
+import screenImg4 from "./assets/Img/PInsta-4.png"
+
 import './App.css'
 
 function App() {
   // Image section
 
   const images = {
-    1: { imgName: 'PInsta-1' },
-    2: { imgName: 'PInsta-2' },
-    3: { imgName: 'PInsta-3' },
-    4: { imgName: 'PInsta-4' }
+    1: { imgName: 'PInsta-1', src: screenImg1 },
+    2: { imgName: 'PInsta-2', src: screenImg2 },
+    3: { imgName: 'PInsta-3', src: screenImg3 },
+    4: { imgName: 'PInsta-4', src: screenImg4 }
   }
 
   const links = {
@@ -79,16 +87,15 @@ function App() {
               <div
                 id="phoneFrame"
                 className="absolute w-full h-full bg-no-repeat bg-contain"
-                style={{ backgroundImage: "url('/src/assets/Img/RootImg.png')" }}
+                style={{ backgroundImage: `url(${iphoneBgImg})` }}
               >
                 <div className="absolute top-[27px] right-[57px] w-[250px] h-[538px] overflow-hidden">
                   <div className="relative w-full h-full">
                     {Object.values(images).map((card, index) => (
-                      // console.log(card.imgName);
                       <img
                         key={index}
                         className={`absolute w-[250px] h-[538px] object-cover transition-opacity duration-500 ease-in-out ${currentImage === index ? 'opacity-100 blur-none' : 'opacity-0 blur-[10px]'}`}
-                        src={`/src/assets/Img/${card.imgName}.png`}
+                        src={card.src}  // Use the imported image directly
                       />
                     ))}
                   </div>
@@ -103,7 +110,7 @@ function App() {
               {/* Instagram Logo */}
               <div className="flex justify-center mb-8">
                 <img
-                  src="\src\assets\Img\InstagramText.png"
+                  src={instagramText}
                   alt="Instagram"
                   className="h-[79px] w-[175px]"
                 />
